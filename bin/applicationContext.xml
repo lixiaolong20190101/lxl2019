@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+	<!-- 注入student对象 -->
+	<bean id="student001" name="studentName" class="com.yidu.bean.Student">
+		<property name="name" value="李大龙"></property>
+		<property name="age" value="60"></property>
+		<property name="sex" value="男"></property>
+		<property name="like">
+			<array>
+				<value>打架</value>
+				<value>唱歌</value>
+				<value>把妹</value>
+				<value>吃麻辣汤</value>
+			</array>
+		</property>
+		<property name="likeList">
+			<list>
+				<value>打架</value>
+				<value>唱歌</value>
+				<value>把妹</value>
+				<value>吃麻辣汤</value>
+			</list>
+		</property>
+		<property name="likeMap">
+			<map>
+				<entry key="l001" value="小龙01"></entry>
+				<entry key="l002" value="小龙02"></entry>
+				<entry key="l003" value="小龙03"></entry>
+				<entry key="l004" value="小龙04"></entry>
+			</map>
+		</property>
+		<property name="score" ref="scores"></property>
+	</bean>
+	
+	<bean name="scores" class="com.yidu.bean.Score">
+		<constructor-arg index="0" value="80"></constructor-arg>
+		<constructor-arg index="1" value="90"></constructor-arg>
+		<constructor-arg index="2" value="89"></constructor-arg>
+	</bean>
+
+
+	
+	<!-- 准备工作: 导入aop(约束)命名空间 -->
+<!-- 1.配置目标对象 -->
+	<bean name="userService" class="com.yidu.service.StudentService" ></bean>
+<!-- 2.配置通知对象 -->
+	<bean name="myAop" class="com.yidu.aop.MyAop" ></bean>
+<!-- 3.配置将通知织入目标对象 -->
+	<aop:config>
+		<!-- 配置切入点 -->
+		<aop:pointcut expression="execution(* com.yidu.service.StudentService.*(..))" id="pc"/>
+		<!-- <aop:aspect ref="myAop" >
+			指定名为before方法作为前置通知
+			<aop:before method="before" pointcut-ref="pc" />
+			后置
+			<aop:after-returning method="afterReturning" pointcut-ref="pc" />
+			环绕通知
+			<aop:around method="around" pointcut-ref="pc" />
+			异常拦截通知
+			<aop:after-throwing method="afterException" pointcut-ref="pc"/>
+			后置
+			<aop:after method="after" pointcut-ref="pc"/>
+		</aop:aspect> -->
+		<aop:advisor advice-ref="myAop" pointcut-ref="pc"/>
+	</aop:config>
+
+</beans>
