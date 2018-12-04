@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/spring-beans-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-expression-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aop-4.2.6.RELEASE.jar" sourcepath="H:/20180818备课/第三阶段备课/spring备课/spring4.2.6/spring_framework_4.2.6/spring-framework-4.2.6.RELEASE/libs/spring-aop-4.2.6.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aspects-4.2.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-instrument-4.2.6.RELEASE-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/spring-test-4.2.6.RELEASE.jar" sourcepath="H:/2017教学资料/框架案例资料/spring4.2.6/spring_framework_4.2.6/spring-framework-4.2.6.RELEASE/libs/spring-test-4.2.6.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjrt-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjweaver-1.9.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
